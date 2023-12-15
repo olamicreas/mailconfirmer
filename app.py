@@ -25,12 +25,8 @@ app = flask.Flask(__name__)
 app.secret_key = 'REPLACE ME - this value is here as a placeholder.'
 result = []
 
+
 @app.route('/')
-def index():
-  return print_index_table()
-
-
-@app.route('/test')
 def test_api_request():
     if 'credentials' not in flask.session:
         return flask.redirect('authorize')
